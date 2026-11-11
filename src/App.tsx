@@ -12,6 +12,7 @@ import SvgAccessGate from "./components/SvgAccessGate";
 import LegalReagreeModal from "./components/LegalReagreeModal";
 import ActivityCaptchaModal from "./components/ActivityCaptchaModal";
 import { isSvgShell } from "./lib/siteOrigin";
+import "./styles/mcps-theme.css";
 
 const queryClient = new QueryClient();
 const Router = isSvgShell() ? HashRouter : BrowserRouter;
@@ -27,6 +28,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <Router>
+        <div className="mcps-independent-note">
+          Independent student project · Not affiliated with MCPS
+        </div>
         <SvgAccessGate>
           <LegalReagreeModal />
           <ActivityCaptchaModal />
